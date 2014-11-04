@@ -8,7 +8,7 @@ These latest versions are always under testing and are packed with the new featu
 
 Inspired by Laurent Ninga( https://plus.google.com/112939850134979360366/about ) who would always have to visit whatsapp.com to check new versions, I deciced to make his life simple by bbuilding this application.
 
-The source code is open sourced under the Apache License 2.0
+The source code is open source under the Apache License 2.0
 
 License
 ===============
