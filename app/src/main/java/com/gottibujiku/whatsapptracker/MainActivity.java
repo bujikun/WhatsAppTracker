@@ -102,20 +102,43 @@ public class MainActivity extends Activity {
                     return;
                 }
 
-                if (Util.getWhatsappVersion(getApplicationContext()).equals(version)) {
+                try {
+
+                    if (Util.installedIsLatestVersion(
+                            Util.getWhatsappVersion(getApplicationContext()),
+                            version)) {
+
+                    /*
+                    the three lines above do
+                    get version of the installed whatsapp and passes that along with the
+                    version from the website to the Util.installedIsLatestVersion() method
+                    that does the comparison
+                     */
 
 
-                    //if the latest whatsapp version at whatsapp.com is the same as the one
-                    //installed  display toast
+                        //if the latest whatsapp version at whatsapp.com is the same as the one
+                        //installed  display toast
+
+                        Toast.makeText(
+                                getApplicationContext(),
+                                "You have the latest version already...Take A Chill Pill!",
+                                Toast.LENGTH_SHORT
+                        ).show();
+                        return;
+
+                    }
+
+                }catch (Exception e){
 
                     Toast.makeText(
                             getApplicationContext(),
-                            "You have the latest version already...Take A Chill Pill!",
+                            "Something went wrong...You probably don't have an internet connection!!!",
                             Toast.LENGTH_SHORT
                     ).show();
                     return;
 
                 }
+
 
                 //if not then let's get the latest version
                 Util.downloadNewVersion(getApplicationContext());
