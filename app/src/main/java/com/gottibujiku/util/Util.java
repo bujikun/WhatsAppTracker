@@ -1,3 +1,19 @@
+/*
+ Copyright (C) 2014 Newton Bujiku
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+*/
 package com.gottibujiku.util;
 
 import android.content.Context;
@@ -14,14 +30,13 @@ import android.net.Uri;
  */
 public class Util {
 
-    private static  final String WHATSAPP = "com.whatsapp";
-    public static final String WHATSAPP_CURRENT_VERSION ="current_version" ;
-    public static final String  WHATSAPP_LATEST_VERSION = "latest_version";
-    public static final String  DOWNLOAD_LINK = "http://www.whatsapp.com/android/current/WhatsApp.apk";
-    public static  final  String CHROME="com.android.chrome";
+    private static final String WHATSAPP = "com.whatsapp";
+    public static final String WHATSAPP_CURRENT_VERSION = "current_version";
+    public static final String WHATSAPP_LATEST_VERSION = "latest_version";
+    public static final String DOWNLOAD_LINK = "http://www.whatsapp.com/android/current/WhatsApp.apk";
+    public static final String CHROME = "com.android.chrome";
 
     /**
-     *
      * This method fetches the version of the currently installed whatsapp on a device
      *
      * @param context -context of the application/activity
@@ -29,15 +44,15 @@ public class Util {
      */
     public static String getWhatsappVersion(Context context) {
 
-        String whatsappVersion=null;
+        String whatsappVersion = null;
 
         try {
-            PackageInfo info = context.getPackageManager().getPackageInfo(WHATSAPP,0);
+            PackageInfo info = context.getPackageManager().getPackageInfo(WHATSAPP, 0);
 
             whatsappVersion = info.versionName;
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
-            whatsappVersion =" WHATSAPP IS NOT INSTALLED";
+            whatsappVersion = " WHATSAPP IS NOT INSTALLED";
         }
 
 
@@ -46,45 +61,45 @@ public class Util {
 
     /**
      * Launches a browser so that the user can download the latest version of whatsapp
+     *
      * @param context - -context of the application/activity
      */
-    public static  void downloadNewVersion(Context context){
+    public static void downloadNewVersion(Context context) {
 
         Intent intent = new Intent(Intent.ACTION_VIEW,
                 Uri.parse(DOWNLOAD_LINK));
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         try {
-           context.getPackageManager().getPackageInfo(CHROME,0);
+            context.getPackageManager().getPackageInfo(CHROME, 0);
             intent.setPackage(CHROME);
             context.startActivity(intent);
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
-            context.startActivity(Intent.createChooser(intent,"Open With : "));
+            context.startActivity(Intent.createChooser(intent, "Open With : "));
         }
-
 
 
     }
 
     /**
-     *  Prepares an intent for download and returns it
+     * Prepares an intent for download and returns it
      *
      * @param context--context of the application/activity
      * @return an intent to launch a browser
      */
-    public static  Intent getDownloadIntent(Context context){
+    public static Intent getDownloadIntent(Context context) {
 
-       Intent intent = new Intent(Intent.ACTION_VIEW,
+        Intent intent = new Intent(Intent.ACTION_VIEW,
                 Uri.parse(DOWNLOAD_LINK));
         try {
-            context.getPackageManager().getPackageInfo(CHROME,0);
+            context.getPackageManager().getPackageInfo(CHROME, 0);
             intent.setPackage(CHROME);
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
-            context.startActivity(Intent.createChooser(intent,"Open With : "));
+            context.startActivity(Intent.createChooser(intent, "Open With : "));
         }
 
-       return intent;
+        return intent;
 
     }
 

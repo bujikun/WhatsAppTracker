@@ -1,3 +1,19 @@
+/*
+ Copyright (C) 2014 Newton Bujiku
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+*/
 package com.gottibujiku.receivers;
 
 import android.app.AlarmManager;
@@ -13,7 +29,8 @@ import com.gottibujiku.whatsapptracker.R;
 
 /**
  * Starts the TrackerService when the alarm goes off
- *  @author Newton Bujiku
+ *
+ * @author Newton Bujiku
  * @since August 2014
  */
 public class TrackerReceiver extends BroadcastReceiver {
@@ -31,9 +48,9 @@ public class TrackerReceiver extends BroadcastReceiver {
 
     }
 
-    public static void setAlarm(Context context){
+    public static void setAlarm(Context context) {
 
-        AlarmManager manager = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
+        AlarmManager manager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
         //set default preferences if the user has touched them yet
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
@@ -45,14 +62,14 @@ public class TrackerReceiver extends BroadcastReceiver {
         PendingIntent pendingIntent = PendingIntent.getBroadcast(
                 context,
                 1,
-                new Intent(context,TrackerReceiver.class),
+                new Intent(context, TrackerReceiver.class),
                 PendingIntent.FLAG_UPDATE_CURRENT
         );
 
         manager.setInexactRepeating(
                 AlarmManager.RTC_WAKEUP,
                 AlarmManager.INTERVAL_FIFTEEN_MINUTES,
-                Long.parseLong(str)*3600*1000,
+                Long.parseLong(str) * 3600 * 1000,
                 pendingIntent
 
         );
