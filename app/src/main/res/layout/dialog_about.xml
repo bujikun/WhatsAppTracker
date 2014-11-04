@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/white_layer"
+
+        >
+
+    <TextView
+        android:background="#31504f"
+        android:text="WHATSAPP TRACKER"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-regular"
+        android:textSize="23sp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"
+        android:padding="16dp"
+        android:textColor="@android:color/white"
+        android:id="@+id/dialog_about_title" />
+
+        <TextView
+            android:text="@string/dialog_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-regular"
+            android:textSize="17sp"
+            android:layout_gravity="left"
+            android:gravity="left"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:padding="10dp"
+            android:id="@+id/dialog_about_content" />
+
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-regular"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:paddingTop="16dp"
+            android:paddingLeft="48dp"
+            android:paddingRight="48dp"
+            android:paddingBottom="16dp"
+
+            android:textStyle="bold"
+            android:text="GOT IT...!"
+            android:background="@drawable/dialog_ok_selector"
+            android:textColor="@android:color/white"
+            android:id="@+id/dialog_button_ok" />
+
+
+    </LinearLayout>
+

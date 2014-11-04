@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+        <style name="TracerTheme" parent="android:Theme.Holo.Light">
+
+            <item name="android:actionBarStyle">@style/ActionBar</item>
+            <item name="android:windowTranslucentStatus">true</item>
+            <item name="android:windowTranslucentNavigation">true</item>
+            <item name="android:actionOverflowButtonStyle">@style/OverflowButton</item>
+
+        </style>
+
+
+
+    <style name="ActionBar" parent="android:Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@drawable/action_bar</item>
+
+
+    </style>
+
+
+
+    <style name="OverflowButton" parent="android:Widget.Holo.Light.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_action_overflow</item>
+
+    </style>
+
+
+
+
+
+</resources>
